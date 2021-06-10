@@ -48,9 +48,9 @@ These VM changes are backwards-compatible: all past and currently-possible trans
 
 ### Ecosystem Upgrade Costs
 
-Because this proposal only affects internals of the VM, standard wallets, block explorers, and other services will not require software modifications for these changes. Only software which offers emulation of VM evaluation (e.g. [Bitauth IDE](https://github.com/bitauth/bitauth-ide)) will be required to upgrade.
+Because this proposal only affects internals of the VM, standard wallets, block explorers, and other services will not require software modifications for these changes. Only software which offers VM evaluation (e.g. [Bitauth IDE](https://github.com/bitauth/bitauth-ide)) will be required to upgrade.
 
-Wallets and other services may also upgrade to add support for new contracts which will become possible after deployment of this proposal.
+Wallets and other services may optionally upgrade to add support for new contracts which will become possible after deployment of this proposal.
 
 ## Technical Specification
 
@@ -64,7 +64,7 @@ To support these operations, the control stack is modified to support integer va
 
 This proposal modifies the control stack (A.K.A. `ExecStack` or `ConditionStack`) to support integer values. When testing for operation execution, integer values must be ignored.
 
-> Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually represented as an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the top of the stack is `true`.
+> Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the top of the stack is `true`.
 
 ### Repeated Bytes
 
@@ -84,9 +84,9 @@ A new unsigned integer counter, `Repeated Bytes`, is added to the VM state, init
 
 - if this control value is not an integer, error.
 - The difference between the current instruction pointer and the control value is added to `Repeated Bytes`; if `Repeated Bytes` + `script.size()` is greater than `MAX_SCRIPT_SIZE`, error.
-- The top item is popped from the stack, if the value is truthy (by the same test as `OP_IF`) the instruction pointer is set to the `OP_BEGIN` instruction (otherwise, evaluation continues past the `OP_UNTIL`).
+- The top item is popped from the stack, if the value is `0` (the same test as `OP_NOTIF`) the instruction pointer is set to the `OP_BEGIN` instruction (otherwise, evaluation continues past the `OP_UNTIL`).
 
-> `OP_UNTIL` has two possible error conditions: 1) a mismatched `OP_BEGIN` (either `OP_BEGIN` is missing or the loop contains an `OP_IF` without a matching `OP_ENDIF`), or 2) executing the loop would cause the evaluation to exceed `MAX_SCRIPT_SIZE`. If neither of these occur, evaluation returns to the `OP_BEGIN`, and that instruction pointer index is again pushed to the control stack.
+> `OP_UNTIL` has two possible error conditions: 1) a mismatched `OP_BEGIN` (either `OP_BEGIN` is missing or the loop contains an `OP_IF` without a matching `OP_ENDIF`), or 2) executing the loop would cause the evaluation to exceed `MAX_SCRIPT_SIZE`. If neither of these occur, and the top stack item is `0`, evaluation returns to the `OP_BEGIN` (and that instruction pointer index is again pushed to the control stack).
 
 ## Rationale
 
@@ -178,7 +178,7 @@ For example, to aggregate the UTXO value of each transaction input without bound
 <4> // the count of values to aggregate
 
 // locking bytecode
-OP_DUP <4> OP_LESSTHANOREQUAL OP_VERIFY // prevent malleability
+OP_DUP OP_TXINPUTCOUNT OP_LESSTHANOREQUAL OP_VERIFY // prevent malleability
 OP_1SUB OP_DUP <0> OP_GREATERTHANOREQUAL OP_IF
     OP_SWAP
     <0> OP_UTXOVALUE
@@ -210,12 +210,13 @@ OP_DROP // drop remaining index, leaving aggregated value on top
 With bounded loops, this aggregation can be simplified to:
 
 ```
-<1> <0>
-OP_BEGIN                                  // loop (re)starts with index, value
-  OP_OVER OP_UTXOVALUE OP_ADD             // Add UTXO value to total
-  OP_OVER <4> OP_NUMNOTEQUAL              // loop until index equals input count
-OP_UNTIL
-OP_NIP                                    // drop index after loop is complete
+<0> <0>
+OP_BEGIN                            // loop (re)starts with index, value
+  OP_OVER OP_UTXOVALUE OP_ADD       // Add UTXO value to total
+  OP_SWAP OP_1ADD OP_SWAP           // increment index
+  OP_OVER OP_TXINPUTCOUNT OP_EQUAL
+OP_UNTIL                            // loop until next index would exceed final index
+OP_NIP                              // drop index, leaving sum of UTXO values
 ```
 
 ## Implementations
