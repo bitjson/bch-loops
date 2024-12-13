@@ -6,25 +6,26 @@
         Maintainer: Jason Dreyzehner
         Status: Draft
         Initial Publication Date: 2021-05-28
-        Latest Revision Date: 2021-05-28
+        Latest Revision Date: 2024-12-12
 
 ## Summary
 
-This proposal includes two new BCH virtual machine (VM) operations, `OP_BEGIN` and `OP_UNTIL`, which enable a variety of loop constructions in BCH contracts without increasing the processing or memory requirements of the VM.
+This proposal adds two new BCH virtual machine (VM) operations, `OP_BEGIN` and `OP_UNTIL`, enabling a variety of loop constructions in BCH contracts without increasing the processing or memory requirements of the VM.
 
 ## Deployment
 
-Deployment of this specification is proposed for the May 2022 upgrade.
+Deployment of this specification is proposed for the May 2026 upgrade.
 
-This proposal requires [`CHIP: Targeted Virtual Machine Limits`](https://github.com/bitjson/bch-vm-limits), or equivalent limits on the processing and memory usage of the VM.
+- Activation is proposed for `1763208000` MTP, (`2025-11-15T12:00:00.000Z`) on `chipnet`.
+- Activation is proposed for `1778846400` MTP, (`2026-05-15T12:00:00.000Z`) on the BCH network (`mainnet`), `testnet3`, `testnet4`, and `scalenet`.
 
 ## Motivation
 
-The Bitcoin Cash VM is strictly limited to prevent maliciously-designed transactions from requiring excessive resources during transaction validation.
+The Bitcoin Cash VM is [strictly limited](https://github.com/bitjson/bch-vm-limits) to prevent maliciously-designed transactions from requiring excessive resources during transaction validation.
 
-Loops were originally excluded from this design on the mistaken assumption that they risk consuming excessive validation resources. In reality, a small number of VM operations make up [the majority of resource usage during transaction validation](https://github.com/bitjson/bch-vm-limits#benchmarks), and any implementation of bounded loops can be many orders of magnitude faster than the most pathological VM bytecode constructions.
+Loops were originally excluded from the VM design as part of an initial, anti-Denial-of-Service approach. However, despite the "no loops" approach being quietly abandoned for explicit limits ([`reverted makefile.unix wx-config -- version 0.3.6` – July 29, 2010](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/commit/757f0769d8360ea043f469f3a35f6ec204740446)), the Bitcoin Cash VM is still missing this basic control flow structure.
 
-Introducing this basic control flow structure would make BCH contracts significantly more powerful and efficient.
+**This proposal adds the well-established, `OP_BEGIN`/`OP_UNTIL` loop construction used by most Forth-like languages**, making BCH contracts significantly more powerful and efficient.
 
 ## Benefits
 
