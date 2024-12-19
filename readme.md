@@ -6,7 +6,8 @@
         Maintainer: Jason Dreyzehner
         Status: Draft
         Initial Publication Date: 2021-05-28
-        Latest Revision Date: 2024-12-12
+        Latest Revision Date: 2024-12-18
+        Version: 1.2.0
 
 ## Summary
 
@@ -23,7 +24,7 @@ Deployment of this specification is proposed for the May 2026 upgrade.
 
 The Bitcoin Cash VM is [strictly limited](https://github.com/bitjson/bch-vm-limits) to prevent maliciously-designed transactions from requiring excessive resources during transaction validation.
 
-Loops were originally excluded from the VM design as part of an initial, anti-Denial-of-Service approach. However, despite the "no loops" approach being quietly abandoned for explicit limits ([`reverted makefile.unix wx-config -- version 0.3.6` – July 29, 2010](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/commit/757f0769d8360ea043f469f3a35f6ec204740446)), the Bitcoin Cash VM is still missing this basic control flow structure.
+Loops were originally excluded from the VM design as part of an initial, anti-Denial-of-Service approach. However, despite the "no loops" approach being quietly abandoned for explicit limits ([`reverted makefile.unix wx-config -- version 0.3.6` – July 29, 2010](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/commit/757f0769d8360ea043f469f3a35f6ec204740446)), the Bitcoin Cash VM is still missing this basic control flow structure, creating significant waste in many contracts by requiring duplication of contract bytecode.
 
 **This proposal adds the well-established, `OP_BEGIN`/`OP_UNTIL` loop construction used by most Forth-like languages**, making BCH contracts significantly more powerful and efficient.
 
@@ -39,7 +40,9 @@ The following costs and risks have been assessed.
 
 Without adequate limits, looping operations have the potential to increase worst-case transaction validation costs and expose VM implementations to Denial of Service (DOS) attacks.
 
-**Mitigations**: this proposal includes strict limits which ensure loops do not increase the maximum executable bytecode length (`MAX_SCRIPT_SIZE`, 10,000 bytes). This altogether avoids increasing the available surface area for Denial of Service (DOS) attacks.
+Following [`CHIP 2021-05 VM Limits`](https://github.com/bitjson/bch-vm-limits/), the Bitcoin Cash VM consistently prevents abuse of all VM operations via density-based limits. Accordingly, new flow control structures cannot magnify worst-case validation performance – all constructions made more concise by this proposal are equivalently limited to a corresponding degree across each of the VM's existing abuse prevention metrics. (Note also that this proposal was specifically reviewed as part of the [VM Limits CHIP: Risk Assessment](https://github.com/bitjson/bch-vm-limits/blob/master/risk-assessment.md#consideration-of-possible-future-changes).)
+
+Additionally, this proposal includes new test vectors covering both functional behavior and worst-case validation performance (across both standard and nonstandard validation).
 
 ### Node Upgrade Costs
 
@@ -65,13 +68,7 @@ To support these operations, the control stack is modified to support integer va
 
 This proposal modifies the control stack (A.K.A. `ExecStack` or `ConditionStack`) to support integer values. When testing for operation execution, integer values must be ignored.
 
-> Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the top of the stack is `true`.
-
-### Repeated Bytes
-
-A new unsigned integer counter, `Repeated Bytes`, is added to the VM state, initialized to `0` at the beginning of evaluation.
-
-> `Repeated Bytes` is only used by `OP_UNTIL` to prevent excessive use of loops.
+> Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the control stack contains no `false` values.
 
 ### `OP_BEGIN` (`0x65`/`101`)
 
@@ -83,11 +80,8 @@ A new unsigned integer counter, `Repeated Bytes`, is added to the VM state, init
 
 `OP_UNTIL` pops the top item from the control stack:
 
-- if this control value is not an integer, error.
-- The difference between the current instruction pointer and the control value is added to `Repeated Bytes`; if `Repeated Bytes` + `script.size()` is greater than `MAX_SCRIPT_SIZE`, error.
+- If this control value is not an integer, error.
 - The top item is popped from the stack, if the value is `0` (the same test as `OP_NOTIF`) the instruction pointer is set to the `OP_BEGIN` instruction (otherwise, evaluation continues past the `OP_UNTIL`).
-
-> `OP_UNTIL` has two possible error conditions: 1) a mismatched `OP_BEGIN` (either `OP_BEGIN` is missing or the loop contains an `OP_IF` without a matching `OP_ENDIF`), or 2) executing the loop would cause the evaluation to exceed `MAX_SCRIPT_SIZE`. If neither of these occur, and the top stack item is `0`, evaluation returns to the `OP_BEGIN` (and that instruction pointer index is again pushed to the control stack).
 
 ## Rationale
 
@@ -128,19 +122,19 @@ Merkle trees offer a versatile data structure for storing state in BCH contracts
 
 OP_FROMALTSTACK // check if leaf requires swap
 OP_IF OP_SWAP OP_ENDIF
-OP_CAT OP_HASH160
+OP_CAT OP_HASH256
 
 OP_FROMALTSTACK // check if tier 2 requires swap
 OP_IF OP_SWAP OP_ENDIF
-OP_CAT OP_HASH160
+OP_CAT OP_HASH256
 
 OP_FROMALTSTACK // check if tier 3 requires swap
 OP_IF OP_SWAP OP_ENDIF
-OP_CAT OP_HASH160
+OP_CAT OP_HASH256
 
 OP_FROMALTSTACK // check if tier 4 requires swap
 OP_IF OP_SWAP OP_ENDIF
-OP_CAT OP_HASH160
+OP_CAT OP_HASH256
 
 <root> OP_EQUALVERIFY
 ```
@@ -161,7 +155,7 @@ With bounded loops, this procedure can be simplified to:
 
 OP_BEGIN
   OP_IF OP_SWAP OP_ENDIF // check if leaf requires swap
-  OP_CAT OP_HASH160
+  OP_CAT OP_HASH256
   OP_FROMALTSTACK
 OP_UNTIL
 
@@ -212,27 +206,38 @@ With bounded loops, this aggregation can be simplified to:
 
 ```
 <0> <0>
-OP_BEGIN                            // loop (re)starts with index, value
-  OP_OVER OP_UTXOVALUE OP_ADD       // Add UTXO value to total
-  OP_SWAP OP_1ADD OP_SWAP           // increment index
+OP_BEGIN                            // Loop (re)starts with index, value
+  OP_OVER OP_UTXOVALUE OP_ADD       // Add UTXO value at index to total
+  OP_SWAP OP_1ADD OP_SWAP           // Increment index
   OP_OVER OP_TXINPUTCOUNT OP_EQUAL
-OP_UNTIL                            // loop until next index would exceed final index
-OP_NIP                              // drop index, leaving sum of UTXO values
+OP_UNTIL                            // Loop until index equals the TX input count
+OP_NIP                              // Drop index, leaving sum of UTXO values
 ```
 
 ## Implementations
 
-Please see the following reference implementations for additional examples and test vectors:
+Please see the following implementations for additional examples and test vectors:
 
-[TODO: after initial public feedback]
-
-## Stakeholders & Statements
-
-[TODO]
+- **JavaScript/TypeScript**:
+  - [Libauth](https://github.com/bitauth/libauth) – An ultra-lightweight, zero-dependency JavaScript library for Bitcoin Cash. [Branch `next`](https://github.com/bitauth/libauth/tree/next).
+  - [Bitauth IDE](https://github.com/bitauth/bitauth-ide) – An online IDE for bitcoin (cash) contracts. [Branch `next`](https://github.com/bitauth/bitauth-ide/tree/next).
 
 ## Feedback & Reviews
 
+- [Loops CHIP Issues](https://github.com/bitjson/bch-loops/issues)
 - [`CHIP 2021-05 Bounded Looping Operations` - Bitcoin Cash Research](https://bitcoincashresearch.org/t/chip-2021-05-bounded-looping-operations/463)
+
+## Changelog
+
+This section summarizes the evolution of this document.
+
+- **v1.2.0** (current)
+  - Re-propose for 2026
+  - Eliminate `Repeated Bytes` counter ([#5](https://github.com/bitjson/bch-loops/issues/5))
+- **v1.1.0 – 2021-06-10** ([`d1406b69`](https://github.com/bitjson/bch-loops/commit/d764bd43eafc59fe1f7602adb518b980fbe619d4))
+  - Correct `OP_UNTIL` to complete on truthy values
+- **v1.0.0 – 2021-05-27** ([`d1406b69`](https://github.com/bitjson/bch-loops/commit/056aec90ea5afdb8115f8ad4dc692392e1f0aa87))
+  - Initial publication
 
 ## Copyright
 
