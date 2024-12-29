@@ -62,7 +62,7 @@ Two new VM operations are added: `OP_BEGIN` (`0x65`/`101`) and `OP_UNTIL` (`0x66
 
 > Note: these codepoints were previously used by `OP_VERIF` (`0x65`) and `OP_VERNOTIF` (`0x66`) in early versions of Bitcoin, but those operations were disabled when it was realized that they created a fork-risk between different versions of the Bitcoin software. Both codepoints currently render the transaction invalid (even when found in an unexecuted OP_IF branch), so they are effectively equivalent to any codepoints in the undefined ranges. They are particularly well-suited for this application because they are the only two available, adjacent codepoints within the control-flow range of operations.
 
-To support these operations, the control stack is modified to support integer values, and a new unsigned integer counter `Repeated Bytes` is added to the VM state.
+To support these operations, the control stack is modified to support integer values.
 
 ### Control Stack
 
