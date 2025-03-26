@@ -62,26 +62,33 @@ Two new VM operations are added: `OP_BEGIN` (`0x65`/`101`) and `OP_UNTIL` (`0x66
 
 > Note: these codepoints were previously used by `OP_VERIF` (`0x65`) and `OP_VERNOTIF` (`0x66`) in early versions of Bitcoin, but those operations were disabled when it was realized that they created a fork-risk between different versions of the Bitcoin software. Both codepoints currently render the transaction invalid (even when found in an unexecuted OP_IF branch), so they are effectively equivalent to any codepoints in the undefined ranges. They are particularly well-suited for this application because they are the only two available, adjacent codepoints within the control-flow range of operations.
 
-To support these operations, the control stack is modified to support integer values.
+To support these operations, the control stack is modified to support integer values (in order to store instruction pointers into `OP_BEGIN` blocks).
 
 ### Control Stack
 
-This proposal modifies the control stack (A.K.A. `ExecStack` or `ConditionStack`) to support integer values. When testing for operation execution, integer values must be ignored.
+This proposal modifies the existing control stack (A.K.A. `ExecStack` or `ConditionStack`) to support integer values (as instruction pointers). When testing for conditional execution, integer values must be ignored.
 
 > Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the control stack contains no `false` values.
 
 ### `OP_BEGIN` (`0x65`/`101`)
 
-`OP_BEGIN` pushes the current instruction pointer index to the control stack (A.K.A. `ConditionStack`).
+`OP_BEGIN` pushes the instruction pointer of the instruction immediately following it to the control stack (A.K.A. `ConditionStack`).
 
 > This operation sets a pointer to which the evaluation will return when the matching `OP_UNTIL` is encountered. If a matching `OP_UNTIL` is never encountered, the evaluation returns an error.
 
+- If there is no instruction following `OP_BEGIN` (that is, it is the last instruction in the script), error.
+- If the control stack depth exceeds 100, error.
+
 ### `OP_UNTIL` (`0x66`/`102`)
 
-`OP_UNTIL` pops the top item from the control stack:
+`OP_UNTIL` pops the top item, `I`, from the *control stack*:
 
-- If this control value is not an integer, error.
-- The top item is popped from the stack, if the value is `0` (the same test as `OP_NOTIF`) the instruction pointer is set to the `OP_BEGIN` instruction (otherwise, evaluation continues past the `OP_UNTIL`).
+- If the *control stack* was empty, such that no value `I` could be obtained, error.
+- If `I` is not an integer, error (since this means the innermost control block is some `OP_IF`-like block and not an `OP_BEGIN` block).
+- If `I` is an integer, proceed to determine whether execution needs to loop back to the preceding `OP_BEGIN` or not. This is done by popping the top item from the *data stack* and interpreting it as a boolean value, `B`.
+  - If the *data stack* was empty such that no value `B` could be obtained, error.
+  - If `B` is false (the same test as `OP_NOTIF`) the instruction pointer is set to `I`, `I` is then immediately pushed back onto the *control stack*, and evaluation must continue from the instruction that `I` pointed to (which itself is the instruction immediately after the preceding `OP_BEGIN`).
+  - Otherwise, evaluation continues past the `OP_UNTIL`.
 
 ## Rationale
 
