@@ -77,7 +77,7 @@ This proposal modifies the existing control stack (A.K.A. `ExecStack` or `Condit
 > This operation sets a pointer to which the evaluation will return when the matching `OP_UNTIL` is encountered. If a matching `OP_UNTIL` is never encountered, the evaluation returns an error.
 
 - If there is no instruction following `OP_BEGIN` (that is, it is the last instruction in the script), error.
-- If the controd stack depth exceeds 100, error.
+- If the control stack depth exceeds 100, error.
 
 ### `OP_UNTIL` (`0x66`/`102`)
 
