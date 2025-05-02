@@ -1,4 +1,4 @@
-# CHIP-2021-05-loops: Bounded Looping Operations
+# CHIP-2021-05 Loops: Bounded Looping Operations
 
         Title: Bounded Looping Operations
         Type: Standards
@@ -6,8 +6,8 @@
         Maintainer: Jason Dreyzehner
         Status: Draft
         Initial Publication Date: 2021-05-28
-        Latest Revision Date: 2024-12-18
-        Version: 1.2.0
+        Latest Revision Date: 2025-05-02
+        Version: 1.2.1
 
 ## Summary
 
@@ -58,30 +58,49 @@ Wallets and other services may optionally upgrade to add support for new contrac
 
 ## Technical Specification
 
-Two new VM operations are added: `OP_BEGIN` (`0x65`/`101`) and `OP_UNTIL` (`0x66`/`102`).
+Two new VM operations are added: `OP_BEGIN` (`0x65`/`101`) and `OP_UNTIL` (`0x66`/`102`). To support these operations, the control stack is modified to accept instruction pointer positions.
 
-> Note: these codepoints were previously used by `OP_VERIF` (`0x65`) and `OP_VERNOTIF` (`0x66`) in early versions of Bitcoin, but those operations were disabled when it was realized that they created a fork-risk between different versions of the Bitcoin software. Both codepoints currently render the transaction invalid (even when found in an unexecuted OP_IF branch), so they are effectively equivalent to any codepoints in the undefined ranges. They are particularly well-suited for this application because they are the only two available, adjacent codepoints within the control-flow range of operations.
+<details>
 
-To support these operations, the control stack is modified to support integer values.
+<summary>Codepoint Selection</summary>
+
+These codepoints were previously used by `OP_VERIF` (`0x65`) and `OP_VERNOTIF` (`0x66`) in early versions of Bitcoin, but those operations were disabled when it was realized that they created a fork-risk between different versions of the Bitcoin software. They are particularly well-suited for this application because they are the only two available, adjacent codepoints within the control-flow range of operations.
+
+</details>
 
 ### Control Stack
 
-This proposal modifies the control stack (A.K.A. `ExecStack` or `ConditionStack`) to support integer values. When testing for operation execution, integer values must be ignored.
+This proposal modifies the control stack (A.K.A. `vfExec` or `ConditionStack`) to support instruction pointer positions. When testing for conditional execution, implementations must ignore items representing these positions.
 
-> Prior to this proposal, the control stack (A.K.A. `ExecStack` or `ConditionStack`) is conceptually an array of boolean values: when a flow control operation (like `OP_IF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the control stack contains no `false` values.
+<details>
+
+<summary>Condition Stack vs. Control Stack</summary>
+
+Prior to this proposal, the control stack is conceptually an array of boolean values: when a flow control operation (`OP_IF` or `OP_NOTIF`) is encountered, a `true` is pushed to the stack if the branch is to be executed, and `false` if not. (`OP_ELSE` toggles the top value on this stack.) Non-flow control operations are only evaluated if the control stack contains no `false` values.
+
+Following implementation of this proposal, the control stack is conceptually an an array of either boolean **_or integer values_**: when `OP_BEGIN` is encountered, the current instruction pointer position is pushed to the control stack. Later, if a matching `OP_UNTIL` isn't satisfied, the program returns to that position.
+
+</details>
 
 ### `OP_BEGIN` (`0x65`/`101`)
 
-`OP_BEGIN` pushes the current instruction pointer index to the control stack (A.K.A. `ConditionStack`).
+`OP_BEGIN` pushes the next instruction pointer index to the control stack (A.K.A. `vfExec` or `ConditionStack`).
 
-> This operation sets a pointer to which the evaluation will return when the matching `OP_UNTIL` is encountered. If a matching `OP_UNTIL` is never encountered, the evaluation returns an error.
+<details>
+
+<summary>Explanation</summary>
+
+This operation sets a pointer to which the evaluation will return when the matching `OP_UNTIL` is encountered. IF an `OP_ENDIF` is encountered before the matching `OP_UNTIL` – or a matching `OP_UNTIL` is never encountered – the evaluation returns an error.
+
+</details>
 
 ### `OP_UNTIL` (`0x66`/`102`)
 
-`OP_UNTIL` pops the top item from the control stack:
+`OP_UNTIL` inspects the top item from the control stack:
 
-- If this control value is not an integer, error.
-- The top item is popped from the stack, if the value is `0` (the same test as `OP_NOTIF`) the instruction pointer is set to the `OP_BEGIN` instruction (otherwise, evaluation continues past the `OP_UNTIL`).
+- If this control item is not an instruction pointer position (set by `OP_BEGIN`), error.
+- The top item is popped from the stack.
+- If the value is `0` (the same test as `OP_NOTIF`) the evaluation's instruction pointer is set to the position indicated by the control item (immediately after the matching `OP_BEGIN` instruction); otherwise, evaluation continues past the `OP_UNTIL`.
 
 ## Rationale
 
@@ -214,10 +233,16 @@ OP_UNTIL                            // Loop until index equals the TX input coun
 OP_NIP                              // Drop index, leaving sum of UTXO values
 ```
 
+## Test Vectors
+
+This proposal includes [a suite of functional tests and benchmarks](./vmb_tests/) to verify the performance of all operations within virtual machine implementations.
+
 ## Implementations
 
 Please see the following implementations for additional examples and test vectors:
 
+- C++:
+  - [Bitcoin Cash Node (BCHN)](https://bitcoincashnode.org/) – A professional, miner-friendly node that solves practical problems for Bitcoin Cash. [Merge Request !1937](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/merge_requests/1937).
 - **JavaScript/TypeScript**:
   - [Libauth](https://github.com/bitauth/libauth) – An ultra-lightweight, zero-dependency JavaScript library for Bitcoin Cash. [Branch `next`](https://github.com/bitauth/libauth/tree/next).
   - [Bitauth IDE](https://github.com/bitauth/bitauth-ide) – An online IDE for bitcoin (cash) contracts. [Branch `next`](https://github.com/bitauth/bitauth-ide/tree/next).
@@ -231,12 +256,16 @@ Please see the following implementations for additional examples and test vector
 
 This section summarizes the evolution of this document.
 
-- **v1.2.0** (current)
+- **v1.2.1 – 2025-05-02** (current)
+  - Clarify descriptions
+  - Commit latest test vectors
+  - Link to BCHN implementation
+- **v1.2.0 – 2024-12-18** ([`b358b5a3`](https://github.com/bitjson/bch-loops/commit/b358b5a3bccd2ae2eac4d941f387e8cb969ec018))
   - Re-propose for 2026
   - Eliminate `Repeated Bytes` counter ([#5](https://github.com/bitjson/bch-loops/issues/5))
-- **v1.1.0 – 2021-06-10** ([`d1406b69`](https://github.com/bitjson/bch-loops/commit/d764bd43eafc59fe1f7602adb518b980fbe619d4))
+- **v1.1.0 – 2021-06-10** ([`d764bd43`](https://github.com/bitjson/bch-loops/commit/d764bd43eafc59fe1f7602adb518b980fbe619d4))
   - Correct `OP_UNTIL` to complete on truthy values
-- **v1.0.0 – 2021-05-27** ([`d1406b69`](https://github.com/bitjson/bch-loops/commit/056aec90ea5afdb8115f8ad4dc692392e1f0aa87))
+- **v1.0.0 – 2021-05-27** ([`056aec90`](https://github.com/bitjson/bch-loops/commit/056aec90ea5afdb8115f8ad4dc692392e1f0aa87))
   - Initial publication
 
 ## Copyright
