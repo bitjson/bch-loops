@@ -6,8 +6,8 @@
         Maintainer: Jason Dreyzehner
         Status: Draft
         Initial Publication Date: 2021-05-28
-        Latest Revision Date: 2025-06-30
-        Version: 1.2.2
+        Latest Revision Date: 2025-05-02
+        Version: 1.2.1
 
 ## Summary
 
@@ -101,10 +101,6 @@ This operation sets a pointer to which the evaluation will return when the match
 - If this control item is not an instruction pointer position (set by `OP_BEGIN`), error.
 - The top item is popped from the stack.
 - If the value is `0` (the same test as `OP_NOTIF`) the evaluation's instruction pointer is set to the position indicated by the control item (immediately after the matching `OP_BEGIN` instruction); otherwise, evaluation continues past the `OP_UNTIL`.
-
-### Base Instruction Cost Reduction
-
-The [Base Instruction Cost](https://github.com/bitjson/bch-vm-limits#base-instruction-cost) is reduced from `100` to `10`.
 
 ## Rationale
 
@@ -260,9 +256,7 @@ Please see the following implementations for additional examples and test vector
 
 This section summarizes the evolution of this document.
 
-- **v1.2.2 – 2025-06-30** (current)
-  - Reduce Base Instruction Cost
-- **v1.2.1 – 2025-05-02** ([`e0af77e9`](https://github.com/bitjson/bch-loops/commit/e0af77e951ad27cb5158cb86ad0ad60a76f336e7)) 
+- **v1.2.1 – 2025-05-02** (current)
   - Clarify descriptions
   - Commit latest test vectors
   - Link to BCHN implementation
