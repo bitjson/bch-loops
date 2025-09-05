@@ -6,8 +6,8 @@
         Maintainer: Jason Dreyzehner
         Status: Draft
         Initial Publication Date: 2021-05-28
-        Latest Revision Date: 2025-05-02
-        Version: 1.2.1
+        Latest Revision Date: 2025-09-05
+        Version: 1.2.3
 
 ## Summary
 
@@ -256,7 +256,12 @@ Please see the following implementations for additional examples and test vector
 
 This section summarizes the evolution of this document.
 
-- **v1.2.1 – 2025-05-02** (current)
+- **v1.2.3 – 2025-09-05** (current)
+  - Revert "Reduce Base Instruction Cost" ([#8](https://github.com/bitjson/bch-loops/issues/8))
+  - Update VMB tests and benchmarks
+- **v1.2.2 – 2025-06-30** ([`9c1f55d9`](https://github.com/bitjson/bch-loops/commit/9c1f55d9625e210c9c6eff113c3fa34049b586a5))
+  - Reduce Base Instruction Cost
+- **v1.2.1 – 2025-05-02** ([`e0af77e9`](https://github.com/bitjson/bch-loops/commit/e0af77e951ad27cb5158cb86ad0ad60a76f336e7))
   - Clarify descriptions
   - Commit latest test vectors
   - Link to BCHN implementation
