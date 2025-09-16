@@ -4,10 +4,10 @@
         Type: Standards
         Layer: Consensus
         Maintainer: Jason Dreyzehner
-        Status: Draft
         Initial Publication Date: 2021-05-28
         Latest Revision Date: 2025-09-05
-        Version: 1.2.3
+        Version: 1.2.3 (bd3ebc76)
+        Status: Frozen for Lock-In
 
 ## Summary
 
@@ -254,9 +254,9 @@ Please see the following implementations for additional examples and test vector
 
 ## Changelog
 
-This section summarizes the evolution of this document.
+This section summarizes the evolution of this proposal.
 
-- **v1.2.3 – 2025-09-05** (current)
+- **v1.2.3 – 2025-09-05** ([`bd3ebc76`](https://github.com/bitjson/bch-loops/commit/bd3ebc76bfa2190255fd3b5fcd84ec8910652f4e) – [diff vs. `master`](https://github.com/bitjson/bch-loops/compare/master...bd3ebc76bfa2190255fd3b5fcd84ec8910652f4e))
   - Revert "Reduce Base Instruction Cost" ([#8](https://github.com/bitjson/bch-loops/issues/8))
   - Update VMB tests and benchmarks
 - **v1.2.2 – 2025-06-30** ([`9c1f55d9`](https://github.com/bitjson/bch-loops/commit/9c1f55d9625e210c9c6eff113c3fa34049b586a5))
