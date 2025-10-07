@@ -110,7 +110,7 @@ Responses from wallets that support Bitcoin Cash.
 | [Electron Cash](https://electroncash.org/)                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Ellipal Wallet](https://www.ellipal.com/)                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Exodus](https://www.exodus.com/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Flowee Pay](https://flowee.org/products/pay/)                   |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Flowee Pay](https://flowee.org/products/pay/)                   |   `v1.2.3`    |         |            |   ➖    |         |
 | [FullStack.Cash](https://fullstack.cash/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Guarda](https://guarda.com/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [imToken](https://token.im/)                                     |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -123,7 +123,8 @@ Responses from wallets that support Bitcoin Cash.
 | [MetaMask](https://metamask.io/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Neutrino Wallet](https://neutrino.cash/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [OneKey](https://onekey.so/)                                     |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Opal Wallet](https://opalwallet.cash)                           |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Opal Wallet](https://opalwallet.cash)                           |   `v1.2.3`    |   ✅    |            |         |         |
+| [OPTN](https://www.optnlabs.com/)                                |   `v1.2.3`    |   ✅    |            |         |         |
 | [Payperless](https://www.payperless.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Paytaca](https://www.paytaca.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [PurelyPeer](https://purelypeer.cash/)                           |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -133,7 +134,7 @@ Responses from wallets that support Bitcoin Cash.
 | [Stack Wallet](https://stackwallet.com/)                         |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Tangem](https://tangem.com/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [TotalSig](https://www.totalsig.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Trezor](https://trezor.io/)                                     |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Trezor](https://trezor.io/)                                     |   `v1.2.3`    |         |            |   ➖    |         |
 | [Trust Wallet](https://trustwallet.com/)                         |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Trustee Plus](https://trusteeglobal.com/)                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Unstoppable Wallet](https://unstoppable.money/)                 |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -152,7 +153,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [Accept Bitcoin Cash Initiative](https://acceptbitcoin.cash/)             |   `v1.2.3`    |         |            |         |   ⏳    |
 | [ActorForth](https://github.com/ActorForth/ActorForth)                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [awesomebitcoin.cash](https://awesomebitcoin.cash/)                       |   `v1.2.3`    |   ✅    |            |         |         |
-| [bch.info](https://bch.info/)                                             |   `v1.2.3`    |         |            |         |   ⏳    |
+| [bch.info](https://bch.info/)                                             |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH Bull](https://bchbull.com/)                                          |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH DevSuite](https://devsuite.actorforth.org/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH Bliss](https://www.bliss.cash/)                                      |   `v1.2.3`    |   ✅    |            |         |         |
@@ -172,7 +173,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [Bitauth IDE](https://ide.bitauth.com)                                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [BitCANN](https://github.com/BitCANN/bitcann-contracts)                   |   `v1.2.3`    |   ✅    |            |         |         |
 | [Bitcart](https://bitcart.ai/)                                            |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Bitcash](https://github.com/pybitcash/bitcash)                           |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Bitcash](https://github.com/pybitcash/bitcash)                           |   `v1.2.3`    |         |            |   ➖    |         |
 | [Bitcoin Cash Argentina](https://bitcoincashargentina.com/)               |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bitcoin Cash City](https://bchcity.com)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bitcoin Cash Explorer](https://explorer.salemkode.com/)                  |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -195,6 +196,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [CashFusion.org](https://cashfusion.org/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CashFusion Red Team](https://fusionstats.redteam.cash/)                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CashNodes.io](https://cashnodes.io/)                                     |   `v1.2.3`    |         |            |         |   ⏳    |
+| [cashlab](https://github.com/hosseinzoda/cashlab)                         |   `v1.2.3`    |   ✅    |            |         |         |
 | [cashp](https://github.com/Ekliptor/cashp)                                |   `v1.2.3`    |   ✅    |            |         |         |
 | [CashScript](https://cashscript.org/)                                     |   `v1.2.3`    |   ✅    |            |         |         |
 | [CashTags](https://tags.infra.cash/)                                      |   `v1.2.3`    |   ✅    |            |         |         |
@@ -229,7 +231,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [minisatoshi.cash](https://minisatoshi.cash/)                             |   `v1.2.3`    |   ✅    |            |         |         |
 | [NeonDaThal](https://www.youtube.com/@NeonDaThal/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [One.Surgery](https://one.surgery/)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Opal Base](https://github.com/58opals/OpalBase)                          |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Opal Base](https://github.com/58opals/OpalBase)                          |   `v1.2.3`    |   ✅    |            |         |         |
 | [OpenCashDAO](https://github.com/OpenCashDAO/opencashdao-contracts)       |   `v1.2.3`    |   ✅    |            |         |         |
 | [OpenTokenRegistry](https://otr.cash/)                                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [Oracles.cash](https://oracles.cash/)                                     |   `v1.2.3`    |   ✅    |            |         |         |
@@ -252,13 +254,14 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [SmartBCH](https://smartbch.org/)                                         |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Spedn](https://spedn.pl/)                                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Stamps.Cash](https://stamps.cash/)                                       |   `v1.2.3`    |   ✅    |            |         |         |
-| [SwiftFulcrum](https://github.com/58opals/SwiftFulcrum)                   |   `v1.2.3`    |         |            |         |   ⏳    |
+| [SwiftFulcrum](https://github.com/58opals/SwiftFulcrum)                   |   `v1.2.3`    |   ✅    |            |         |         |
 | [Taiwan Bitcoin Cash (台灣比特幣現金)](https://twbitcoin.cash/)           |   `v1.2.3`    |   ✅    |            |         |         |
 | [Tipb.ch](https://tipb.ch)                                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Tokenaut](https://www.tokenaut.cash/)                                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [TokenStork](https://tokenstork.com/)                                     |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Unspent.cash](https://unspent.cash/)                                     |   `v1.2.3`    |   ✅    |            |         |         |
 | [Unspent Phi](https://unspent.app/)                                       |   `v1.2.3`    |   ✅    |            |         |         |
+| [vegabch](https://github.com/hosseinzoda/vegabch)                         |   `v1.2.3`    |   ✅    |            |         |         |
 | [Vox.cash](https://vox.cash/)                                             |   `v1.2.3`    |   ✅    |            |         |         |
 | [Watchtower](https://watchtower.cash/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 
@@ -270,7 +273,7 @@ Responses from exchanges, miners, services, and other businesses.
 | -------------------------------------------------------------- | :-----------: | :-----: | :--------: | :-----: | :-----: |
 | [2Miners](https://2miners.com/)                                |   `v1.2.3`    |         |            |   ➖    |         |
 | [3xpl](https://3xpl.com/)                                      |   `v1.2.3`    |         |            |         |   ⏳    |
-| [58 Opals](https://58opals.com)                                |   `v1.2.3`    |         |            |         |   ⏳    |
+| [58 Opals](https://58opals.com)                                |   `v1.2.3`    |   ✅    |            |         |         |
 | [A Fifth of Gaming](https://afifthofgaming.com/)               |   `v1.2.3`    |         |            |         |   ⏳    |
 | [ALFAcoins](https://www.alfacoins.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Amagi Finance](https://amagi.finance/)                        |   `v1.2.3`    |   ✅    |            |         |         |
@@ -283,12 +286,12 @@ Responses from exchanges, miners, services, and other businesses.
 | [AscendEX](https://ascendex.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Azbit](https://azbit.com/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bake](https://bake.io/)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Ballet Global](https://www.ballet.com/)                       |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Ballet Global](https://www.ballet.com/)                       |   `v1.2.3`    |         |            |   ➖    |         |
 | [Basepoker](https://basepoker.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BasicSwap](https://basicswapdex.com/)                         |   `v1.2.3`    |         |            |         |   ⏳    |
 | [B2BinPay](https://b2binpay.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH BULL](https://bchbull.com/)                               |   `v1.2.3`    |   ✅    |            |         |         |
-| [BCH Guru](https://bch.guru/)                                  |   `v1.2.3`    |   ✅    |            |         |         |
+| [BCH Guru](https://bch.guru/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH.games](https://bch.games/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH PUMP](https://bchpump.cash/)                              |   `v1.2.3`    |   ✅    |            |         |         |
 | [BenSwap](https://benswap.cash/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -494,7 +497,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Mullvad](https://mullvad.net/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [N.exchange](https://n.exchange/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Namecheap](https://www.namecheap.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
-| [NanoGPT](https://nano-gpt.com/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
+| [NanoGPT](https://nano-gpt.com/)                               |   `v1.2.3`    |         |            |   ➖    |         |
 | [Ndax](https://ndax.io/)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Netcoins](https://netcoins.ca/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Newegg](https://www.newegg.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -527,7 +530,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Poolside Puffers](https://puffers.cash/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Poloniex](https://poloniex.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [PrimeXBT](https://primexbt.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Prompt.Cash](https://prompt.cash/)                            |   `v1.2.3`    |   ✅    |            |         |         |
+| [Prompt.cash](https://prompt.cash/)                            |   `v1.2.3`    |   ✅    |            |         |         |
 | [ProBit](https://www.probit.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [PROHASHING](https://prohashing.com/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Publish0x](https://www.publish0x.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -545,7 +548,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [SideShift.ai](https://sideshift.ai/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [SIGMAPOOL](https://sigmapool.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [SimpleFX](https://simplefx.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
-| [SimpleSwap](https://simpleswap.io/)                           |   `v1.2.3`    |         |            |         |   ⏳    |
+| [SimpleSwap](https://simpleswap.io/)                           |   `v1.2.3`    |   ✅    |            |         |         |
 | [SoloPool.org](https://solopool.org/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [SolomonPierce](https://solomonpierce.com/)                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [SouthXChange](https://southxchange.com/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -634,6 +637,11 @@ The following articles have been published in support of this CHIP:
 - [Knuth](https://kth.cash/): [Statement via x.com](https://x.com/KnuthNode/status/1970470221979828411) (September 23, 2025)
 - [Fernando Pelliccioni](https://x.com/ferpelliccioni): [Statement via x.com](https://x.com/ferpelliccioni/status/1970466467121696771) (September 23, 2025)
 - [2qx](https://github.com/2qx): [Statement via vox.cash](https://vox.cash/pop?postId=066d35df297b09d4f5df71736ce9254b65121c3e16640f34f20851c941c28f72) (September 30, 2025)
+- [mainnet_pat](https://github.com/mainnet-pat): [Statement via x.com](https://x.com/mainnet_pat/status/1973334305398202714) (October 1, 2025)
+- [OPTN Labs](https://www.optnlabs.com/): [Statement via x.com](https://x.com/lightswarm/status/1973477046681731476) (October 1, 2025)
+- [Zapit](https://zapit.io/): [Statement via x.com](https://x.com/cypherpunk_bch/status/1974342748275970058) (October 4, 2025)
+- [Hossein Zoda](https://x.com/hosseinzde): [Statement via x.com](https://x.com/hosseinzde/status/1974455734327984185) (October 4, 2025)
+- [Prompt.cash](https://prompt.cash/): [Statement via x.com](https://x.com/cashprompt/status/1974793708609613859) (October 5, 2025)
 
 The following statements have been submitted in support of this CHIP.
 
@@ -834,6 +842,46 @@ The following statements have been submitted in support of this CHIP.
 > As investors, business owners and promoters, We fully support network upgrades and optimizations to show more sparks
 >
 > —<cite>[Taiwan Bitcoin Cash (台灣比特幣現金)](https://twbitcoin.cash/) <a href="https://x.com/twbitcoincash/status/1968707600218001771">⧉</a></cite>
+
+> I would like to endorse the BCH 2026 upgrade including CHIPs for bitwise ops, functions, loops and new P2S. They make Bitcoin VM even more complete and practical for modern applications.
+> I particularly love the increase of token commitment size to 128 bytes <3
+>
+> —<cite>[mainnet_pat](https://github.com/mainnet-pat), [mainnet.cash](https://mainnet.cash/), [TapSwap](https://tapswap.cash) <a href="https://x.com/mainnet_pat/status/1973334305398202714">⧉</a></cite>
+
+> The Bitcoin Cash community is preparing for the 2026 Layla upgrade, and I'm happy to endorsing 4 key CHIPs on behalf of @OPTNLabs that unlock the future of programmable money:
+>
+> 🌀 Loops – bounded iteration for compact contracts
+> 🔧 Functions – modular DEFINE/INVOKE for reusable logic
+> 🔢 Bitwise ops – low-level power devs expect
+> 📜 Pay-to-Script (P2S) – safer, more flexible outputs
+>
+> Together, these proposals expand what’s possible with covenants: vaults, DAOs, programmable treasuries, and tokenized assets on BCH.
+>
+> @OPTNLabs Wallet is already covenant-ready, giving developers and users a live playground for these innovations.
+>
+> —<cite>[Jerry - Lightswarm](https://x.com/lightswarm), [OPTN Labs](https://www.optnlabs.com/) <a href="https://x.com/lightswarm/status/1973477046681731476">⧉</a></cite>
+
+> I, on behalf of myself, @zapit_io, @bitcann_org, and OpenCashDAO, endorse the BCH 2026 Layla upgrade featuring CHIPs: Bitwise, Functions, Loops, and P2S.
+>
+> This upgrade will unlock massive potential for the BCH DeFi ecosystem.
+>
+> —<cite>[kiok](https://x.com/cypherpunk_bch), [Zapit](https://zapit.io/), [BitCANN](https://github.com/BitCANN/bitcann-contracts), [OpenCashDAO](https://github.com/OpenCashDAO/opencashdao-contracts) <a href="https://x.com/cypherpunk_bch/status/1974342748275970058">⧉</a></cite>
+
+> 58 Opals approves activating _CHIP-2021-05 Loops_, _CHIP-2024-12 P2S_, _CHIP-2025-05 Functions_, and _CHIP-2025-05 Bitwise_ in the May 15, 2026 upgrade.
+>
+> —<cite>[Coda Beatrix](https://github.com/codabeatrix), [58 Opals](https://58opals.com), [SwiftFulcrum](https://github.com/58opals/SwiftFulcrum), [Opal Base](https://github.com/58opals/OpalBase), and [Opal Wallet](https://opalwallet.cash)</cite>
+
+> I support the four chips proposed by @bitjson, Scheduled to be in 2026 upgrade.
+>
+> It's reducing limits as we get access to better hardware.
+>
+> And it introduces functions, Contract devs will be able to construct complex systems in BCH, A highly scalable UTXO model,Promoting use!
+>
+> —<cite>[Hossein Zoda](https://x.com/hosseinzde), [cashlab](https://github.com/hosseinzoda/cashlab), [vegabch](https://github.com/hosseinzoda/vegabch), [BCH-Cockpit](https://github.com/hosseinzoda/bchcockpit) <a href="https://x.com/hosseinzde/status/1974455734327984185">⧉</a></cite>
+
+> We at prompt.cash endorse the proposed BCH CHIPs by @bitjson for the May 2026 protocol upgrade. Especially Functions and Loops are interesting additions to Bitcoin Cash that will allow features previously only possible on EVM chains!
+>
+> —<cite>[Prompt.cash](https://prompt.cash/) <a href="https://x.com/cashprompt/status/1974793708609613859">⧉</a></cite>
 
 ### Disapprove
 
