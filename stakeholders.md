@@ -77,7 +77,7 @@ Responses from open source node and virtual machine (VM) implementations that su
 | ------------------------------------------------- | :-----------: | :-----: | :--------: | :-----: | :-----: |
 | [AlbaDsl](https://github.com/albaDsl/alba-dsl)    |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCHD](https://bchd.cash/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Bitcoin Cash Node](https://bitcoincashnode.org/) |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Bitcoin Cash Node](https://bitcoincashnode.org/) |   `v1.2.3`    |   ✅    |            |         |         |
 | [Bitcoin Verde](https://bitcoinverde.org/)        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Flowee](https://flowee.org/products/hub/)        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Libauth](https://libauth.org/)                   |   `v1.2.3`    |   ✅    |            |         |         |
@@ -220,7 +220,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [Googol.cash Testnet Faucet](https://tbch.googol.cash/)                   |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Haskoin](https://github.com/haskoin/haskoin-core)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Jedex](https://github.com/bitjson/jedex)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Johoe's Mempool Statistics](https://jochen-hoenicke.de/queue/)           |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Johoe's Mempool Statistics](https://jochen-hoenicke.de/queue/)           |   `v1.2.3`    |   ✅    |            |         |         |
 | [HelpMe.Cash](https://helpme.cash/)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Hur project](https://hur-project.gitlab.io/hur-freelancers/)             |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Kallisti.cash](https://kallisti.cash/)                                   |   `v1.2.3`    |   ✅    |            |         |         |
@@ -291,7 +291,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [BasicSwap](https://basicswapdex.com/)                         |   `v1.2.3`    |         |            |         |   ⏳    |
 | [B2BinPay](https://b2binpay.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH BULL](https://bchbull.com/)                               |   `v1.2.3`    |   ✅    |            |         |         |
-| [BCH Guru](https://bch.guru/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
+| [BCH Guru](https://bch.guru/)                                  |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH.games](https://bch.games/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BCH PUMP](https://bchpump.cash/)                              |   `v1.2.3`    |   ✅    |            |         |         |
 | [BenSwap](https://benswap.cash/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -642,6 +642,8 @@ The following articles have been published in support of this CHIP:
 - [Zapit](https://zapit.io/): [Statement via x.com](https://x.com/cypherpunk_bch/status/1974342748275970058) (October 4, 2025)
 - [Hossein Zoda](https://x.com/hosseinzde): [Statement via x.com](https://x.com/hosseinzde/status/1974455734327984185) (October 4, 2025)
 - [Prompt.cash](https://prompt.cash/): [Statement via x.com](https://x.com/cashprompt/status/1974793708609613859) (October 5, 2025)
+- [Bitcoin Cash Node](https://bitcoincashnode.org/): [Statement via gitlab.com](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/issues/546#note_2814614806) (October 11, 2025)
+- [BCH Guru](https://bch.guru/): [Statement via x.com](https://x.com/BCH_Guru/status/1977521931466510844) (October 12, 2025)
 
 The following statements have been submitted in support of this CHIP.
 
@@ -882,6 +884,29 @@ The following statements have been submitted in support of this CHIP.
 > We at prompt.cash endorse the proposed BCH CHIPs by @bitjson for the May 2026 protocol upgrade. Especially Functions and Loops are interesting additions to Bitcoin Cash that will allow features previously only possible on EVM chains!
 >
 > —<cite>[Prompt.cash](https://prompt.cash/) <a href="https://x.com/cashprompt/status/1974793708609613859">⧉</a></cite>
+
+> **BCHN Statement on CHIPs for May 2026 Network Upgrade**
+>
+> As a project, we would like to formally declare our support for the following CHIPs to be included in the May 2026 consensus changes:
+>
+> - [Loops CHIP (Commit 0cc2569)](https://github.com/bitjson/bch-loops/tree/0cc256951d2584ccdf595f54acb5989751a35e75)
+> - [Functions CHIP (Commit c2a9715)](https://github.com/bitjson/bch-functions/tree/c2a9715b94581cb8aee005536b29ba6fa4ac5cc9)
+> - [Pay-2-Script CHIP (Commit 53b4236)](https://github.com/bitjson/bch-p2s/tree/53b42363159163201c683e91e774833bf8dfcfc6)
+> - [Bitwise CHIP (Commit 031652c)](https://github.com/bitjson/bch-bitwise/tree/031652c6d5d060ea5489b75dc7be18ea0fc87c75)
+>
+> Support for the activation of these CHIPs will be included in our next major release (v29.0.0).
+>
+> We invite everyone who is interested in the future of Bitcoin Cash to review and comment on the implementation of these changes ahead of deployment in May, and to make good use of the time available until then for testing on the chipnet test network (e.g. BCHN started with the `-chipnet` flag) that provides a testing ground for these CHIPs from 15 November 2025 onward.
+>
+> —<cite>[Bitcoin Cash Node](https://bitcoincashnode.org/) <a href="https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/issues/546#note_2814614806">⧉</a></cite>
+
+> Good to see that there are improvements to Bitcoin Cash. The new features look good and are a useful extension to the existing scripting system. I haven't audited the changes, though.
+>
+> —<cite>[Jochen Hoenicke](https://jochen-hoenicke.de/), [Johoe's Mempool Statistics](https://jochen-hoenicke.de/queue/)</cite>
+
+> Guru Labs endorses the 2021-05 Loops, 2025-05 Functions, 2024-12 Pay to Script and the 2025-05 Bitwise CHIPS for the Bitcoin Cash 2026 upgrade cycle. Loops. Loops. Loops. Loops. Functions. Functions. Functions. Functions... And repeat...
+>
+> —<cite>[BCH Guru](https://bch.guru/) <a href="https://x.com/BCH_Guru/status/1977521931466510844">⧉</a></cite>
 
 ### Disapprove
 
