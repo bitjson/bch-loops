@@ -92,7 +92,7 @@ Responses from wallets that support Bitcoin Cash.
 | [Amagi Wallet](https://amagi.finance/)                           |   `v1.2.3`    |   ✅    |            |         |         |
 | [Atomic Wallet](https://atomicwallet.io/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [`bchwallet`](https://github.com/gcash/bchwallet)                |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Bitcoin.com Wallet](https://wallet.bitcoin.com/)                |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Bitcoin.com Wallet](https://wallet.bitcoin.com/)                |   `v1.2.3`    |   ✅    |            |         |         |
 | [BitPay Wallet](https://bitpay.com/wallet)                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bitpie](https://bitpie.com/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BlockParty Wallet](https://blockparty.sh/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -183,7 +183,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [Bitcoin Cash TV](https://bitcoincashtv.com/)                             |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitcoinCash Nigeria](https://bch.ng/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitcoinCash.org](https://bitcoincash.org/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
-| [BitcoinCashClient](https://github.com/david-shattuck/BitcoinCashClient)  |   `v1.2.3`    |         |            |         |   ⏳    |
+| [BitcoinCashClient](https://github.com/david-shattuck/BitcoinCashClient)  |   `v1.2.3`    |   ✅    |            |         |         |
 | [BitcoinCashStandards.org](https://bitcoincashstandards.org/)             |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitcoinCashResearch.org](https://bitcoincashresearch.org/)               |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitcoinFees.cash](https://bitcoinfees.cash/)                             |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -274,7 +274,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [2Miners](https://2miners.com/)                                |   `v1.2.3`    |         |            |   ➖    |         |
 | [3xpl](https://3xpl.com/)                                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [58 Opals](https://58opals.com)                                |   `v1.2.3`    |   ✅    |            |         |         |
-| [A Fifth of Gaming](https://afifthofgaming.com/)               |   `v1.2.3`    |         |            |         |   ⏳    |
+| [A Fifth of Gaming](https://afifthofgaming.com/)               |   `v1.2.3`    |   ✅    |            |         |         |
 | [ALFAcoins](https://www.alfacoins.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Amagi Finance](https://amagi.finance/)                        |   `v1.2.3`    |   ✅    |            |         |         |
 | [Antpool](https://www.antpool.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -307,7 +307,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Bitbuy](https://bitbuy.ca/)                                   |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bitbank](https://bitbank.cc/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitCats Heroes Club](https://bitcatsheroes.club/)             |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Bitcoin.com](https://bitcoin.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Bitcoin.com](https://bitcoin.com/)                            |   `v1.2.3`    |   ✅    |            |         |         |
 | [Bitcoin.de](https://www.bitcoin.de/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Bitcoin.TM](https://bitcoin.tm/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BitcoinVN](https://bitcoinvn.io/)                             |   `v1.2.3`    |   ✅    |            |         |         |
@@ -408,7 +408,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Cointree](https://www.cointree.com/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Criptan](https://criptan.com/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Crypto.com](https://crypto.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
-| [CryptoCompare](https://www.cryptocompare.com/)                |   `v1.2.3`    |         |            |         |   ⏳    |
+| [CryptoCompare](https://www.cryptocompare.com/)                |   `v1.2.3`    |         |            |   ➖    |         |
 | [CryptoKnights.games](https://cryptoknights.games)             |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Cryptomus](https://cryptomus.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CryptoProcessing](https://cryptoprocessing.com/)              |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -469,7 +469,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Korbit](https://www.korbit.co.kr/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Kraken](https://kraken.com/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Kryptex Pool](https://pool.kryptex.com/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
-| [KuCoin](https://www.kucoin.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
+| [KuCoin](https://www.kucoin.com/)                              |   `v1.2.3`    |         |            |   ➖    |         |
 | [Lamassu](http://lamassu.is)                                   |   `v1.2.3`    |         |            |         |   ⏳    |
 | [LATOKEN](https://latoken.com/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Launchpad IP](https://launchpadip.com/)                       |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -644,6 +644,8 @@ The following articles have been published in support of this CHIP:
 - [Prompt.cash](https://prompt.cash/): [Statement via x.com](https://x.com/cashprompt/status/1974793708609613859) (October 5, 2025)
 - [Bitcoin Cash Node](https://bitcoincashnode.org/): [Statement via gitlab.com](https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/issues/546#note_2814614806) (October 11, 2025)
 - [BCH Guru](https://bch.guru/): [Statement via x.com](https://x.com/BCH_Guru/status/1977521931466510844) (October 12, 2025)
+- [Bitcoin.com](https://bitcoin.com/): "[Bitcoin.com Supports the May 2026 Bitcoin Cash Upgrade](https://news.bitcoin.com/bitcoin-com-supports-the-may-2026-bitcoin-cash-upgrade/)" (October 21, 2025)
+- [David Shattuck](https://x.com/davidshattuck8): [Statement via x.com](https://x.com/davidshattuck8/status/1982094917594657149) (October 25, 2025)
 
 The following statements have been submitted in support of this CHIP.
 
@@ -908,6 +910,32 @@ The following statements have been submitted in support of this CHIP.
 >
 > —<cite>[BCH Guru](https://bch.guru/) <a href="https://x.com/BCH_Guru/status/1977521931466510844">⧉</a></cite>
 
+> As a company that builds wallets on top of Bitcoin Cash, we welcome the proposed CHIPs for the upcoming May 2026 network upgrade. This milestone strengthens the foundation for developers to create new on-chain products, expanding what can be built while preserving the network’s simplicity and efficiency.
+>
+> The May 2026 Bitcoin Cash network upgrade introduces four key proposals that expand the scripting and programmability capabilities of BCH while maintaining its efficiency and reliability.
+>
+> - **CHIP-2021-05: Loops (Bounded Looping Operations)** adds two new virtual machine operations, OP_BEGIN and OP_UNTIL, allowing developers to construct loops within BCH contracts without increasing processing or memory demands.
+> - **CHIP-2024-12: Pay to Script (P2S)** makes Pay to Script outputs standard on the network. It also increases the allowable length of token commitments and standard unlocking bytecode.
+> - **CHIP-2025-05: Functions (Function Definition and Invocation Operations)** introduces the OP_DEFINE and OP_INVOKE opcodes, which allow Bitcoin Cash bytecode to be organized into reusable functions
+> - **CHIP-2025-05: Bitwise (Re-Enable Bitwise Operations)** restores essential bitwise operations to the Bitcoin Cash script system, allowing for more efficient implementation of financial and cryptographic applications on-chain.
+>
+> Together, these upgrades represent another step in the steady technical growth of Bitcoin Cash. They give developers greater flexibility and power to build meaningful, user-focused innovations that move peer-to-peer money forward.
+>
+> The May 2026 upgrade reflects the ongoing technical evolution of Bitcoin Cash. It continues to refine the scripting environment, improve on-chain efficiency, and expand the possibilities for decentralized applications and services. Bitcoin.com remains committed to supporting the development and maintenance of technologies that advance open, scalable, and accessible financial infrastructure.
+>
+> —<cite>Andreas Larsson, Director of Engineering at Bitcoin.com <a href="https://news.bitcoin.com/bitcoin-com-supports-the-may-2026-bitcoin-cash-upgrade/">⧉</a></cite>
+
+> With this post (and speaking on behalf of @a5thofgaming and BitcoinCashClient), I'm publicly endorsing the activation of the CHIPs listed below on the Bitcoin Cash mainnet during the May 2026 upgrade. A huge shout-out and thank you to @bitjson for his tireless and excellent work in the BCH protocol layer over the years and to everyone else (@cculianu especially) who has contributed to this upcoming upgrade.
+>
+> CHIP-2021-05 Loops: Bounded Looping Operations<br>
+> CHIP-2024-12 P2S: Pay to Script<br>
+> CHIP-2025-05 Functions: Function Definition and Invocation Operations<br>
+> CHIP-2025-05 Bitwise: Re-Enable Bitwise Operations<br>
+>
+> "Bitcoin Cash: The Bitcoin with Loops" ! 🥳
+>
+> —<cite>[David Shattuck](https://x.com/davidshattuck8), [A Fifth of Gaming](https://afifthofgaming.com/), [BitcoinCashClient](https://github.com/david-shattuck/BitcoinCashClient) <a href="https://x.com/davidshattuck8/status/1982094917594657149">⧉</a></cite>
+
 ### Disapprove
 
 The following statements have been submitted from individuals and organizations that disapprove of this CHIP.
@@ -918,4 +946,6 @@ _(None)_
 
 The following statements have been submitted from individuals and organizations that remain neutral on this CHIP.
 
-_(None)_
+> We remain neutral on the vote. If the vote passes and the upgrade is confirmed, we will cooperate accordingly.
+>
+> —<cite>[KuCoin](https://www.kucoin.com/)</cite>
