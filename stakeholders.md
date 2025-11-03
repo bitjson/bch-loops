@@ -100,7 +100,7 @@ Responses from wallets that support Bitcoin Cash.
 | [CashAddress.org](https://cashaddress.org/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Cashual Wallet](https://gitlab.com/monsterbitar/cashual-wallet) |   `v1.2.3`    |   ✅    |            |         |         |
 | [Cake Wallet](https://cakewallet.com/)                           |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Coin Wallet](https://coin.space/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Coin Wallet](https://coin.space/)                               |   `v1.2.3`    |         |     ❌     |         |         |
 | [CoinEx Wallet](https://wallet.coinex.com/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Coinomi](https://www.coinomi.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CoolWallet](https://www.coolwallet.io/)                         |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -151,11 +151,11 @@ Responses from open source libraries, indexers, educational resources, and commu
 | Project                                                                   | As of Version | Approve | Disapprove | Neutral | Pending |
 | ------------------------------------------------------------------------- | :-----------: | :-----: | :--------: | :-----: | :-----: |
 | [Accept Bitcoin Cash Initiative](https://acceptbitcoin.cash/)             |   `v1.2.3`    |         |            |         |   ⏳    |
-| [ActorForth](https://github.com/ActorForth/ActorForth)                    |   `v1.2.3`    |         |            |         |   ⏳    |
+| [ActorForth](https://github.com/ActorForth/ActorForth)                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [awesomebitcoin.cash](https://awesomebitcoin.cash/)                       |   `v1.2.3`    |   ✅    |            |         |         |
 | [bch.info](https://bch.info/)                                             |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH Bull](https://bchbull.com/)                                          |   `v1.2.3`    |   ✅    |            |         |         |
-| [BCH DevSuite](https://devsuite.actorforth.org/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
+| [BCH DevSuite](https://devsuite.actorforth.org/)                          |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH Bliss](https://www.bliss.cash/)                                      |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH Blaze](https://x.com/bchblaze)                                       |   `v1.2.3`    |   ✅    |            |         |         |
 | [BCH Festival](https://x.com/bchfestival)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -202,7 +202,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [CashTags](https://tags.infra.cash/)                                      |   `v1.2.3`    |   ✅    |            |         |         |
 | [CashTokens.org](https://cashtokens.org/)                                 |   `v1.2.3`    |   ✅    |            |         |         |
 | [CashTokens Airdrop Tool](https://github.com/mr-zwets/airdrop-tool)       |   `v1.2.3`    |   ✅    |            |         |         |
-| [CashTokens Studio](https://cashtokens.studio/)                           |   `v1.2.3`    |         |            |         |   ⏳    |
+| [CashTokens Studio](https://cashtokens.studio/)                           |   `v1.2.3`    |   ✅    |            |         |         |
 | [Chaingraph](https://chaingraph.cash/)                                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [CasualBCH Podcast](casualbch.cash)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Coin Center](https://www.coincenter.org/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -246,7 +246,7 @@ Responses from open source libraries, indexers, educational resources, and commu
 | [r/btc](https://www.reddit.com/r/btc/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [r/cashtokens](https://www.reddit.com/r/cashtokens/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [rbch](https://github.com/Rucknium/rbch)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Rostrum](https://gitlab.com/bitcoinunlimited/rostrum)                    |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Rostrum](https://gitlab.com/bitcoinunlimited/rostrum)                    |   `v1.2.3`    |   ✅    |            |         |         |
 | [rust-bitcoincash](https://gitlab.com/rust-bitcoincash/rust-bitcoincash/) |   `v1.2.3`    |         |            |         |   ⏳    |
 | [ScanToPay.cash](https://scantopay.cash/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Shinobi Art Engine](https://github.com/cashninjas/shinobi-art-engine)    |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -298,7 +298,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [BEQUANT](https://bequant.io/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Binance](https://www.binance.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BigONE](https://bigone.com/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
-| [BiggestLab](https://biggestlab.io)                            |   `v1.2.3`    |         |            |         |   ⏳    |
+| [BiggestLab](https://biggestlab.io)                            |   `v1.2.3`    |   ✅    |            |         |         |
 | [Bibox](https://www.bibox.com)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BingX](https://bingx.com/)                                    |   `v1.2.3`    |         |            |         |   ⏳    |
 | [BISON](https://bisonapp.com/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -357,7 +357,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Catex](https://www.catex.io/)                                 |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Cash-Ninjas](https://ninjas.cash/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Cashrain](https://cashrain.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Cauldron](https://www.cauldron.quest/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Cauldron](https://www.cauldron.quest/)                        |   `v1.2.3`    |   ✅    |            |         |         |
 | [CEX.IO](https://cex.io/)                                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Chaintip](https://www.chaintip.org/)                          |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Changelly](https://changelly.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -409,7 +409,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Criptan](https://criptan.com/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Crypto.com](https://crypto.com/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CryptoCompare](https://www.cryptocompare.com/)                |   `v1.2.3`    |         |            |   ➖    |         |
-| [CryptoKnights.games](https://cryptoknights.games)             |   `v1.2.3`    |         |            |         |   ⏳    |
+| [CryptoKnights.games](https://cryptoknights.games)             |   `v1.2.3`    |   ✅    |            |         |         |
 | [Cryptomus](https://cryptomus.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CryptoProcessing](https://cryptoprocessing.com/)              |   `v1.2.3`    |         |            |         |   ⏳    |
 | [CryptoR.AT](https://cryptor.at/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -466,6 +466,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Keys4Coins](https://www.keys4coins.com/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
 | [KickEx](https://kickex.com/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Koinly](https://koinly.io/)                                   |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Konk](https://konk.market/)                                   |   `v1.2.3`    |   ✅    |            |         |   ⏳    |
 | [Korbit](https://www.korbit.co.kr/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Kraken](https://kraken.com/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Kryptex Pool](https://pool.kryptex.com/)                      |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -492,7 +493,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Mining-Dutch](https://www.mining-dutch.nl/)                   |   `v1.2.3`    |         |            |         |   ⏳    |
 | [MistSwap](https://mistswap.fi/)                               |   `v1.2.3`    |         |            |         |   ⏳    |
 | [MoonPay](https://www.moonpay.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Moria Protocol](https://www.moria.money/)                     |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Moria Protocol](https://www.moria.money/)                     |   `v1.2.3`    |   ✅    |            |         |         |
 | [Mudrex](https://mudrex.com/)                                  |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Mullvad](https://mullvad.net/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [N.exchange](https://n.exchange/)                              |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -539,7 +540,7 @@ Responses from exchanges, miners, services, and other businesses.
 | [Reku](https://reku.id/)                                       |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Revolut](https://www.revolut.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [RamNode](https://ramnode.com/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
-| [Riften Labs](https://www.riftenlabs.com/)                     |   `v1.2.3`    |         |            |         |   ⏳    |
+| [Riften Labs](https://www.riftenlabs.com/)                     |   `v1.2.3`    |   ✅    |            |         |         |
 | [Robinhood](https://robinhood.com/)                            |   `v1.2.3`    |         |            |         |   ⏳    |
 | [Rocketr](https://rocketr.net/)                                |   `v1.2.3`    |         |            |         |   ⏳    |
 | [SatoshiDice](https://satoshidice.com/)                        |   `v1.2.3`    |         |            |         |   ⏳    |
@@ -647,6 +648,8 @@ The following articles have been published in support of this CHIP:
 - [Bitcoin.com](https://bitcoin.com/): "[Bitcoin.com Supports the May 2026 Bitcoin Cash Upgrade](https://news.bitcoin.com/bitcoin-com-supports-the-may-2026-bitcoin-cash-upgrade/)" (October 21, 2025)
 - [David Shattuck](https://x.com/davidshattuck8): [Statement via x.com](https://x.com/davidshattuck8/status/1982094917594657149) (October 25, 2025)
 - [Buy Hodl Sell](https://buyhodlsell.com/): "[Bitcoin Cash May 2026 Upgrade - What to Expect](https://buyhodlsell.com/articles/bch-may-2026-upgrade-preview)" (October 30, 2025)
+- [Paytaca](https://www.paytaca.com/): [Statement via x.com](https://x.com/_paytaca_/status/1984289421035004272) (October 31, 2025)
+- [Konk](https://konk.market/): [Statement via x.com](https://x.com/NeonDaThal/status/1984401733896765511) (October 31, 2025)
 
 The following statements have been submitted in support of this CHIP.
 
@@ -943,11 +946,39 @@ The following statements have been submitted in support of this CHIP.
 >
 > —<cite>[Buy Hodl Sell](https://buyhodlsell.com) <a href="https://buyhodlsell.com/articles/bch-may-2026-upgrade-preview">⧉</a></cite>
 
+> At Paytaca, we actively build and maintain a range of projects that strengthen the Bitcoin Cash ecosystem — including our wallet and point-of-sale (POS) applications, as well as the BCMR Indexer, CashTokens Studio, and Watchtower.
+>
+> We would like to express our full support for the activation of all four proposed CHIPs — Loops, Functions, Pay-to-Script, and Bitwise — in the upcoming Bitcoin Cash network upgrade.
+>
+> As developers deeply involved in the smart contract and tokenization layers of BCH, we view these proposals as a major advancement that enhances the BCH script’s expressiveness, efficiency, and developer experience.
+>
+> These upgrades mark a significant step forward in enabling more powerful on-chain applications and developer tooling. We are in full agreement with their inclusion in the May 2026 network upgrade and look forward to integrating these new capabilities across our products and future innovations.
+>
+> —<cite>[Paytaca](https://www.paytaca.com/), [BCMR Indexer](https://github.com/paytaca/bcmr-indexer), [Paytaca POS](https://github.com/paytaca/paytaca-pos), [CashTokens Studio](https://cashtokens.studio/), [Watchtower](https://watchtower.cash/) <a href="https://x.com/_paytaca_/status/1984289421035004272">⧉</a></cite>
+
+> I support all 4 CHIPs for the May 2026 upgrade by @bitjson : Loops, Functions, P2S & Bitwise.
+>
+> As a node runner, BCH business owner and novice developer, activating these upgrades supercharges the tools available to be able to build any next level products that can be imagined 1/
+>
+> This gives me complete confidence in the capabilities of BCH while building @Konk_Market and I would urge any devs or tech startups to read up on the 2026 upgrades and consider how their own products would benefit.
+>
+> —<cite>[Neon(Da)Thal](https://x.com/NeonDaThal), [Konk](https://konk.market/) <a href="https://x.com/NeonDaThal/status/1984401733896765511">⧉</a></cite>
+
+> The powerful expressiveness these CHIPs provide are necessary for smart cash operations at scale. None of the smart contract non-utxo based block chain alternatives can scale without compromising decentralization and censorship resistance. Jason's efforts at innovation within the original mission of Bitcoin are making BCH the most viable crypto for the world.
+>
+> —<cite>Benjamin Scherrey, [ActorForth](https://github.com/ActorForth/ActorForth), [BCH DevSuite](https://devsuite.actorforth.org/), [BiggestLab.io](https://biggestlab.io), [CHIP-2021-03 Multiple OP_RETURN](https://github.com/ActorForth/Auction-Protocol/blob/main/CHIP-2021-03-12_Multiple_OP_RETURN_for_Bitcoin_Cash.md), [CryptoKnights.games](https://cryptoknights.games)</cite>
+
 ### Disapprove
 
 The following statements have been submitted from individuals and organizations that disapprove of this CHIP.
 
-_(None)_
+> Coin Wallet appreciates the continued efforts of the Bitcoin Cash developer community and the contributors to the CHIP process.
+>
+> After internal review, we have decided not to approve the activation of the proposed CHIPs (“CHIP-2021-05 Loops,” “CHIP-2024-12 Pay to Script,” “CHIP-2025-05 Functions,” and “CHIP-2025-05 Bitwise”) in the May 2026 network upgrade.
+>
+> Our decision is based on internal strategic and technical considerations, and does not reflect a judgment on the quality or intent of the proposals. We remain committed to supporting the Bitcoin Cash ecosystem and will continue to evaluate future upgrades in alignment with our operational priorities and user needs.
+>
+> —<cite>[Coin Wallet](https://coin.space/)</cite>
 
 ### Neutral
 
